@@ -61,8 +61,8 @@
 #     else:
 #         print(b[i],"este impar")
 #     i+=1        
-b=[1,2,3,6,8,79,54,62,54,8651,54,684,62165,246,0,184,6,548,6]
-for i in range(len(b)):
+# b=[1,2,3,6,8,79,54,62,54,8651,54,684,62165,246,0,184,6,548,6]
+# for i in range(len(b)):
  ############## algoritm de sortare intr-o lista.... tema   
 
 
