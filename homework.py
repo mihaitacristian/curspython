@@ -71,14 +71,13 @@
 #         continue
 #     print(i) 
 ##################################
-# for i in range (0,50):
-#     if i == 0:
-#         print ("PythonBuzz")
-#     elif i%5 == 0:
-#         print ("Python5")
-#     elif i%7 == 0:
-#         print ("7Python")
-#     else:
-#         print(i)
+# print ("PythonBuzz")
+# for i in range (1,50):
+# 
+#     if i%5 == 0:
+#         print (i,"Python5")
+#     if i%7 == 0:
+#         print (i,"7Python")
+
 
 ####################################        
