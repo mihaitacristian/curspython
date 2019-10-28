@@ -76,17 +76,38 @@
 # b=9
 # # print(calcul(a,b))
 
-def calcul():
-    print(a+(b+c))
-a=1
-b=2
-c=3  
-
 # def calcul(a,b,c):
-#     return(a+(b+c))
+#     print(a+(b+c))
+ 
 # a=1
 # b=2
 # c=3
-# print(calcul(a,b,c))
+# calcul(a,b,c)
+
+# # def calcul(a,b,c):
+# #     return(a+(b+c))
+# # a=1
+# # b=2
+# # c=3
+# # print(calcul(a,b,c))
+
+# def date(nume,varsta):
+#     print("Ma numesc",nume,"si am",varsta,"de ani")
+# nume=input("Numele tau este...:")
+# varsta=input("Varsta ta este..:")
+
+# date(nume,varsta)
+
+# sum=0
+# for i in range(5): #
+#     sum=sum+5
+def calcul(a):
+    sum=0
+    for i in range(len(a)):
+        sum = sum+a[i]
+    print("Suma elementelor este",sum)
+a=[1,6,8,4,5,1,7]
+calcul(a)        
+
 
 
