@@ -70,6 +70,15 @@
 #     if i ==3 or i == 7:
 #         continue
 #     print(i) 
+##################################
+# for i in range (0,50):
+#     if i == 0:
+#         print ("PythonBuzz")
+#     elif i%5 == 0:
+#         print ("Python5")
+#     elif i%7 == 0:
+#         print ("7Python")
+#     else:
+#         print(i)
 
-for i in range (0,50):
-    if 
+####################################        
