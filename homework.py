@@ -19,14 +19,57 @@
 #         print("*", end=' ')
 #     print("\r")
 
-# for i in range (rows, 0, -1):
-#     for j in range(0, i -1):
-#         print("*", end=' ')
-#     print("\r")
+####################################
 
-# ghici = float(5)
-# concurent = float(input("Ghici..:"))
-# while True:
-#     if concurent == 5:
-#         print("Felicitari") 
-         
+# ghici = 10
+# concurent = int(input("Ghiceste un numar intre 10..100:"))
+# while concurent != ghici :
+#     print("Mai cauta..") 
+#     concurent = int(input("Ghiceste un numar intre 10..100:"))
+# print("Felicitari ai gasit numarul")
+######################################
+# lista=[22,21,33,61,73,25,90,42,55,35,44,81,4,6,8,9,10,91,92,96,61,333333333333,11111115,849494,65484984,32181865,651961598,51818,845,6515]
+# # print(len(lista))
+# i=0
+# lista_numere_pare= []
+# lista_numere_impare= []
+# for i in lista:
+#     if i % 2 == 0:
+#         lista_numere_pare.append(i)
+#     elif i % 2 == 1:
+#         lista_numere_impare.append(i)
+# print(lista_numere_pare)
+# print("nr.Elemente pare",len(lista_numere_pare))
+# print(lista_numere_impare)
+# print("nr.Elemente impare",len(lista_numere_impare))
+
+
+
+###################################### 
+
+# print ("""
+# ooooooooooooooooo
+# ooooooooooooooooo
+# ooooooooooooooooo
+# oooo
+# oooo
+# oooo
+# ooooooooooooooooo
+# ooooooooooooooooo
+# ooooooooooooooooo
+#              oooo
+#              oooo
+#              oooo
+# ooooooooooooooooo
+# ooooooooooooooooo
+# ooooooooooooooooo
+# """)
+###################################
+
+# for i in range(0,15):
+#     if i ==3 or i == 7:
+#         continue
+#     print(i) 
+
+for i in range (0,50):
+    if 
