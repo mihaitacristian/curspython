@@ -10,5 +10,7 @@ while swapped:
         if lista[i]>lista[i+1]:
             swapped=True
             lista[i],lista[i+1]=lista[i+1],lista[i]
-print("Lista sortata:")
+print("\nLista sortata:")
 print(lista)
+
+
