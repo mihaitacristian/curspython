@@ -101,13 +101,13 @@
 # sum=0
 # for i in range(5): #
 #     sum=sum+5
-def calcul(a):
-    sum=0
-    for i in range(len(a)):
-        sum = sum+a[i]
-    print("Suma elementelor este",sum)
-a=[1,6,8,4,5,1,7]
-calcul(a)        
+# def calcul(a):
+#     sum=0
+#     for i in range(len(a)):
+#         sum = sum+a[i]
+#     print("Suma elementelor este",sum)
+# a=[1,6,8,4,5,1,7]
+# calcul(a)        
 
 
 
