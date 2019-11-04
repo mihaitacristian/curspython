@@ -50,16 +50,35 @@
 # n=int(input("Insert factorial:"))
 # print(factorial(n))
 
-def factorial(n):
-    fact=1
-    for i in range (1,n+1):
-        fact=fact*i
-    return fact
-n=int(input("Insert factorial:"))
-print(factorial(n))
+# def factorial(n):
+#     fact=1
+#     for i in range (1,n+1):
+#         fact=fact*i
+#     return fact
+# n=int(input("Insert factorial:"))
+# print(factorial(n))
 
 # import math
 # print (math.factorial(5))
+
+A = [[1,2,3],[10,11,12],[4,9,3]]
+
+# print("A=",A)
+# print("A[1]=",A[1])
+# print("A[1][2]=",A[1][2])
+# print("A[2]=",A[2]) ###linia 3
+# print("A[2][1]=",A[2][1]) ## linia 3 coloana 2
+# print("[A1]",[A1]) ### linia 2
+# print("A[0][1]",A[0][1]) ## linia 1 coloana 2
+
+b = [[1,2,3,4],[2,3,4,2],[1,3,2,3],[0,0,0,0]] 
+c = [[2],[1]]
+
+suma=0
+for i in range (len(b[1])):
+    suma=suma+(b[1][i])
+print(suma)
+
     
 
         
