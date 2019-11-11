@@ -73,9 +73,13 @@ magazine = {
 
 }
 
-for element in magazine.keys():
-    print(element,magazine[element],sep=":")
+# for element in magazine.keys():
+#     print(element,magazine[element],sep=":")
+
+for i in magazine.keys():
+    for j in magazine[i]:
+        print(i,j)
     
-print(magazine["depozit"][1],magazine["tura"][1],magazine["filiala"][1])
+# print(magazine["depozit"][1],magazine["tura"][1],magazine["filiala"][1])
 # print(magazine["tura"][1])
 # print(magazine["filiala"][1])
