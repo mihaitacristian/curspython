@@ -83,19 +83,15 @@
 # ####################################        
 # import re
 # password=input("Insert password...:")
-# letters=re.search('[0-9]', password)
+# numbers=re.search('[0-9]', password)
 # symbol=re.search('[!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~]', password)
-# for i in range(len(password)):
-#     if i >=7:
-#         if letters and symbol:
-#             letters=True
-#             symbol=True
+# # print (letters,symbol)
+# if (len(password))>=7:
+#         if numbers and symbol:
 #             print("The password has been created!")
-#         elif letters:
-#             letters=False
-#             print("Failed!..The password must contain letters")
-#         elif symbol:
-#             symbol=False
+#         elif numbers==None:
+#             print("Failed!..The password must contain numbers")
+#         elif symbol==None:
 #             print ("Failed!..The password must contain a special character") 
-# if i < 6:
-#     print ("Failed!..The password must contain more characters...")  
+# if (len(password)) < 6:
+#     print ("Failed!..The password must contain more characters...") 
