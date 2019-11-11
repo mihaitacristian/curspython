@@ -15,7 +15,7 @@
 #     "coniac" : 20,
 #     "bere" : 12,
 #     "hartie" : 23
-}
+# }
 # magazin3 = {
 #     "mere" : 6,
 #     "pere" : 8,
