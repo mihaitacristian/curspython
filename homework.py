@@ -94,4 +94,16 @@
 #         elif symbol==None:
 #             print ("Failed!..The password must contain a special character") 
 # if (len(password)) < 6:
-#     print ("Failed!..The password must contain more characters...") 
+#     print ("Failed!..The password must contain more characters...")  
+
+####################################        
+# Folosind doua structure for si functia print() , creati urmatorul model:
+
+# for i in range (0,5):
+#     for j in range (0, i+1):
+#         print ("* ", end="")
+#     print("\r")
+# for i in range(0,5):
+#     for j in range (4 ,i,-1):
+#         print ("* ", end="")        
+#     print()        
