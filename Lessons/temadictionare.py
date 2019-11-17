@@ -12,9 +12,9 @@ magazin = {
     "legume" : 9,
     "deodorant" : 12
 }
-sum=0
+
 def suma(produs,pret):
-    global sum
+    sum=0
     for produs in lista_cumparaturi:
         for pret in magazin:
             if produs==pret:
