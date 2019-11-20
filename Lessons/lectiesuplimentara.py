@@ -75,9 +75,9 @@ dog1 = Dog("Spike")
 dog1.learn_trick("roll over")
 print(dog1.tricks)
 
-
+#OOP
 #inheritance vs composition
-#polymorphism
+#polymorphism .... abstraction
 
 
 
