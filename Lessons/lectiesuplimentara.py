@@ -76,7 +76,7 @@ dog1.learn_trick("roll over")
 print(dog1.tricks)
 
 
-inheritance vs composition
+#inheritance vs composition
 
 
 
