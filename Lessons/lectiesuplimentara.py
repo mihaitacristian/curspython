@@ -77,6 +77,7 @@ print(dog1.tricks)
 
 
 #inheritance vs composition
+#polymorphism
 
 
 
