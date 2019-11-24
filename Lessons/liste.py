@@ -36,7 +36,7 @@
 
 list1 = [1,6,5,8,9]
 lista2 = ["Andra", "Andi","Radu","Alexandra"]
-# list1.extend(lista2) # add lista2
+# list1.extend(lista2) # add lista2 in lista 1
 list1.append(10) #adauga la final valoarea "10"
 list1.sort() #sorteaza lista
 list1.reverse()
