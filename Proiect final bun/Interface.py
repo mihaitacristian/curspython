@@ -46,27 +46,9 @@ def update_salariu():
     backend.update_salariu(selected_tuple[0],name_text.get(),salariu.get())
     view_all()
 
-def bla():
+def minus5():
     backend.salariu_redus()
     view_all()
-
-# def minus5():
-#     a=float(salariu.get())
-#     a=a-a*0.5
-#     backend.update(selected_tuple[0],name_text.get(),salariu.get())
-
-
-
-# def search_command():
-#     list1.delete(0,END)
-#     for row back.search(name_text.get(),CNP_text.get(),salariu.get()):
-#     list1.insert(END,row)
-
-# def modify_salariu():
-#     backend.update(selected_tuple[0],name_text.get(),salariu.get())
-
-
-
 
 
 
@@ -117,7 +99,7 @@ b4.grid(row=2, column=4)
 b5=Button(window,text="view all", width=12,command=view_all)
 b5.grid(row=3, column=3)
 
-b6=Button(window,text="-5% ", width=12,command=bla)
+b6=Button(window,text="-5% ", width=12,command=minus5)
 b6.grid(row=3, column=4)
 
 list1=Listbox(window,height=10,width=59)

@@ -24,14 +24,6 @@ def view():
     conn.close()
     return row 
 
-# def search(name="",cnp="",salariu=""):
-#     conn=sqlite3.connect("database.db")
-#     cur=conn.cursor()
-#     cur.execute("SELECT * FROM database WHERE name=? or cnp = ? or salariu = ?",(name,cnp,salariu))
-#     row=cur.fetchall()
-#     conn.close()
-#     return row
-
 def delete(id):
     conn=sqlite3.connect("database.db")
     cur=conn.cursor()    
