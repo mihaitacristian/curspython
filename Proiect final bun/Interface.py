@@ -4,7 +4,7 @@ from tkinter import messagebox
 import re
 
 
-
+######## Define the functions 
 
 def get_selected_row(event):
     global selected_tuple
@@ -36,7 +36,7 @@ def add_entry():
     digits2=re.search('[0,9]', salariu.get())
     letters2=re.search('[a-zA-Z]', salariu.get())
     symbol2=re.search('[!@#$%^&*(),?":{}|<>]', salariu.get())
-
+                                                                            
     if len(name_text.get())==0:
         messagebox.showinfo("Eroare", "Numele field nu poate sa fie gol!")
         return
@@ -89,6 +89,15 @@ def update_angajat():
     letters2=re.search('[a-zA-Z]', salariu.get())
     symbol2=re.search('[!@#$%^&*(),?":{}|<>]', salariu.get())
     
+    if len(name_text.get())==0:
+        messagebox.showinfo("Eroare", "Numele field nu poate sa fie gol!")
+        return
+    if len(CNP_text.get())==0:
+        messagebox.showinfo("Eroare", "CNP field nu poate sa fie gol!")
+        return
+    if len(salariu.get())==0:
+        messagebox.showinfo("Eroare", "Salariu field nu poate sa fie gol!")
+    
     for i in range(len(CNP_text.get())):
         for j in range(len(name_text.get())):
             for k in range(len(salariu.get())):
@@ -111,7 +120,7 @@ def update_angajat():
                 
                 elif digits and len(str(CNP_text.get()))==13:
                     digits==True
-                    backend.update_angajat(selected_tuple[0],name_text.get(),CNP_text.get())
+                    backend.update_angajat(selected_tuple[0],name_text.get(),CNP_text.get()) ########apeleaza functia update_angajat din backend.py
                     
                     break
                 elif len(str(CNP_text.get()))!=13:
@@ -122,7 +131,7 @@ def update_angajat():
 
 
 def update_salariu():
-    backend.update_salariu(selected_tuple[0],name_text.get(),salariu.get())
+    backend.update_salariu(selected_tuple[0],name_text.get(),salariu.get())   ########apeleaza functia update_salariu din backend.py
     view_all()
 
 def minus5():
