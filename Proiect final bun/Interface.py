@@ -140,8 +140,6 @@ def clickExitButton():
 ######  Interface, Label and buttons ######
 
 
-
-
 #######
 
 window = Tk()                                  # Create instance
