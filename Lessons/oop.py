@@ -37,7 +37,7 @@ class SUV(Masina):
         print("iar garda la sol este de", self.__garda_sol,"cm")
 
 
-a = Masina("Audi", 180, 5,"benzina","verde")
+a = Masina("Audi", 180, 5,"benzina","verde") # instantiere de obiect
 a.print()
 print()
 '''

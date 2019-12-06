@@ -1,7 +1,7 @@
 from tkinter import *
 import backend
 from tkinter import messagebox
-
+import re
 
 
 
@@ -11,15 +11,13 @@ def get_selected_row(event):
     index=list1.curselection()
     if index:
         selected_tuple=list1.get(index)
-    # print(selected_tuple)
         entry1.delete(0,END)
         entry1.insert(0,selected_tuple[1])
         entry2.delete(0,END)
         entry2.insert(0,selected_tuple[2])
         entry3.delete(0,END)
         entry3.insert(0,selected_tuple[3])
-    # entry4.delete(0,END)
-    # entry4.insert(END,selected_tuple[4])
+  
 
 
 def view_all():
@@ -27,18 +25,99 @@ def view_all():
     for row in backend.view():
         list1.insert(END,row)
 
+
 def add_entry():
-    backend.insert(name_text.get(),CNP_text.get(),salariu.get())
-    list1.delete(0,END)
-    list1.insert(END,(name_text.get(),CNP_text.get(),salariu.get()))
-    view_all()
+    digits=re.search('[0-9]', CNP_text.get())
+    letters=re.search('[a-zA-Z]', CNP_text.get())
+    symbol=re.search('[!@#$%^&*(),.?":{}|<>]', CNP_text.get())
+    digits1=re.search('[0-9]', name_text.get())
+    letters1=re.search('[a-zA-Z]', name_text.get())
+    symbol1=re.search('[!@#$%^&*(),.?":{}|<>]', name_text.get())
+    digits2=re.search('[0,9]', salariu.get())
+    letters2=re.search('[a-zA-Z]', salariu.get())
+    symbol2=re.search('[!@#$%^&*(),?":{}|<>]', salariu.get())
+
+    if len(name_text.get())==0:
+        messagebox.showinfo("Eroare", "Numele field nu poate sa fie gol!")
+        return
+    if len(CNP_text.get())==0:
+        messagebox.showinfo("Eroare", "CNP field nu poate sa fie gol!")
+        return
+    if len(salariu.get())==0:
+        messagebox.showinfo("Eroare", "Salariu field nu poate sa fie gol!")
+        return
+    for i in range(len(CNP_text.get())):
+        for j in range(len(name_text.get())):
+            for k in range(len(salariu.get())):
+                if letters or symbol:
+                    letters==True 
+                    symbol==True
+                    messagebox.showinfo("Eroare", "CNP-ul nu poate sa contina litere sau simboluri!")
+                    return
+                elif digits1 or symbol1:
+                    digits1==True 
+                    symbol1==True
+                    messagebox.showinfo("Eroare", "Numele nu poate contine cifre sau simboluri!")
+                    return
+                elif letters2 or symbol2:
+                    letters2==True 
+                    messagebox.showinfo("Eroare", "Salariul nu poate contine cifre sau simboluri!")
+                    return
+                elif digits and len(str(CNP_text.get()))==13:
+                    digits==True
+                    backend.insert(name_text.get(),CNP_text.get(),salariu.get())########apeleaza functia insert din backend.py
+                    list1.delete(0,END)
+                    list1.insert(END,(name_text.get(),CNP_text.get(),salariu.get()))
+                    clear_text()
+                    break
+                elif len(str(CNP_text.get()))!=13:
+                    messagebox.showinfo("Eroare", "CNP-ul nu are 13 caractere!")
+                    return
 
 def delete_entry():
-    backend.delete(selected_tuple[0])
+    backend.delete(selected_tuple[0]) ########apeleaza functia delete din backend.py
     view_all()
 
 def update_angajat():
-    backend.update_angajat(selected_tuple[0],name_text.get(),CNP_text.get())
+    digits=re.search('[0-9]', CNP_text.get())
+    letters=re.search('[a-zA-Z]', CNP_text.get())
+    symbol=re.search('[!@#$%^&*(),.?":{}|<>]', CNP_text.get())
+    digits1=re.search('[0-9]', name_text.get())
+    letters1=re.search('[a-zA-Z]', name_text.get())
+    symbol1=re.search('[!@#$%^&*(),.?":{}|<>]', name_text.get())
+    digits2=re.search('[0,9]', salariu.get())
+    letters2=re.search('[a-zA-Z]', salariu.get())
+    symbol2=re.search('[!@#$%^&*(),?":{}|<>]', salariu.get())
+    
+    for i in range(len(CNP_text.get())):
+        for j in range(len(name_text.get())):
+            for k in range(len(salariu.get())):
+                if letters or symbol:
+                    letters==True 
+                    symbol==True
+                    messagebox.showinfo("Eroare", "CNP-ul nu poate contine litere sau simboluri!")
+                    return 
+                
+                elif digits1 or symbol1:
+                    digits1==True 
+                    symbol1==True
+                    messagebox.showinfo("Eroare", "namele nu poate contine cifre sau simboluri!")
+                    return
+                
+                elif letters2 or symbol2:
+                    letters2==True 
+                    messagebox.showinfo("Eroare", "Salariul nu poate contine cifre sau simboluri!")
+                    return
+                
+                elif digits and len(str(CNP_text.get()))==13:
+                    digits==True
+                    backend.update_angajat(selected_tuple[0],name_text.get(),CNP_text.get())
+                    
+                    break
+                elif len(str(CNP_text.get()))!=13:
+                    messagebox.showinfo("Eroare", "CNP-ul nu are 13 caractere!")
+                    return
+    
     view_all()
 
 
@@ -50,28 +129,46 @@ def minus5():
     backend.salariu_redus()
     view_all()
 
+def clear_text():
+    entry1.delete(0,END)
+    entry2.delete(0,END)
+    entry3.delete(0,END)
+
+def clickExitButton(): 
+        exit()
+
+######  Interface, Label and buttons ######
 
 
-window = Tk()
-window.title("Proiect Manda")
-window.geometry ("800x400")
 
-###### Define the Label and buttons 
 
-label1=Label(window,text="Name",font=("bold",10), pady=20)
+#######
+
+window = Tk()                                  # Create instance
+window.title("Proiect Manda Mihaita")          # Create title
+window.geometry ("800x450+50+50")
+
+
+
+######Labels
+
+label1=Label(window,text="Name",font=("calibri",12), pady=20)
 label1.grid(row=1,column=0,)
 
 
-label2=Label(window,text="CNP",font=("bold",10), pady=20)
+label2=Label(window,text="CNP",font=("calibri",12), pady=20)
 label2.grid(row=2,column=0)
 
-label3=Label(window,text="Salariu",font=("bold",10), pady=20)
+label3=Label(window,text="Salariu",font=("calibri",12), pady=20)
 label3.grid(row=3,column=0)
+
+
+#######Input boxes 
 
 name_text=StringVar()
 entry1=Entry(window, textvariable=name_text)
 entry1.grid(row=1,column=1,sticky=W)
-entry1.insert(0,"Enter your name: ")
+entry1.insert(0,"Enter your Name: ")
 
 CNP_text=StringVar()
 entry2=Entry(window,textvariable=CNP_text)
@@ -84,16 +181,19 @@ entry3.grid(row=3,column=1,sticky=W)
 entry3.insert(0,"Enter your Salariu: ")
 
 
-b1=Button(window,text="add entry", width=12, command=add_entry)
+#########Buttons
+
+b1=Button(window,text="Adaugare angajat", width=12, command=add_entry)
 b1.grid(row=1, column=3)
 
-b2=Button(window,text="delete entry", width=12,command=delete_entry)
+
+b2=Button(window,text="Sterge angajat", width=12,command=delete_entry)
 b2.grid(row=1, column=4)
 
-b3=Button(window,text="update angajat", width=12,command=update_angajat)
+b3=Button(window,text="Modifica angajat", width=12,command=update_angajat)
 b3.grid(row=2, column=3)
 
-b4=Button(window,text="modify salariu", width=12,command=update_salariu)
+b4=Button(window,text="Modifica Salariu", width=12,command=update_salariu)
 b4.grid(row=2, column=4)
 
 b5=Button(window,text="view all", width=12,command=view_all)
@@ -101,6 +201,11 @@ b5.grid(row=3, column=3)
 
 b6=Button(window,text="-5% ", width=12,command=minus5)
 b6.grid(row=3, column=4)
+
+b6=Button(window,text="Exit", width=12,command=clickExitButton)
+b6.grid(row=7, column=4)
+
+#######Listbox#####
 
 list1=Listbox(window,height=10,width=59)
 list1.grid(row=4,column=1, rowspan =3, columnspan=2)
@@ -115,5 +220,5 @@ view_all()
 
 
 
-
+window.resizable(0, 0)
 window.mainloop()
