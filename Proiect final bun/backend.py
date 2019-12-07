@@ -14,7 +14,7 @@ def insert(name,cnp,salariu):
     cur=conn.cursor()
     cur.execute("INSERT INTO database VALUES (NULL, ?,?,?)",(name,cnp,salariu))
     conn.commit()
-    messagebox.showinfo("Angajatul a fost adaugat cu success")
+    messagebox.showinfo("Information","Angajatul a fost adaugat cu success")
     conn.close()
     view()
 

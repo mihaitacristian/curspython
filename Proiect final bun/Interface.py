@@ -38,13 +38,13 @@ def add_entry():
     symbol2=re.search('[!@#$%^&*(),?":{}|<>]', salariu.get())
                                                                             
     if len(name_text.get())==0:
-        messagebox.showinfo("Eroare", "Numele field nu poate sa fie gol!")
+        messagebox.showerror("Eroare", "Numele field nu poate sa fie gol!")
         return
     if len(CNP_text.get())==0:
-        messagebox.showinfo("Eroare", "CNP field nu poate sa fie gol!")
+        messagebox.showerror("Eroare", "CNP field nu poate sa fie gol!")
         return
     if len(salariu.get())==0:
-        messagebox.showinfo("Eroare", "Salariu field nu poate sa fie gol!")
+        messagebox.showerror("Eroare", "Salariu field nu poate sa fie gol!")
         return
     for i in range(len(CNP_text.get())):
         for j in range(len(name_text.get())):
@@ -52,16 +52,16 @@ def add_entry():
                 if letters or symbol:
                     letters==True 
                     symbol==True
-                    messagebox.showinfo("Eroare", "CNP-ul nu poate sa contina litere sau simboluri!")
+                    messagebox.showerror("Eroare", "CNP-ul nu poate sa contina litere sau simboluri!")
                     return
                 elif digits1 or symbol1:
                     digits1==True 
                     symbol1==True
-                    messagebox.showinfo("Eroare", "Numele nu poate contine cifre sau simboluri!")
+                    messagebox.showerror("Eroare", "Numele nu poate contine cifre sau simboluri!")
                     return
                 elif letters2 or symbol2:
                     letters2==True 
-                    messagebox.showinfo("Eroare", "Salariul nu poate contine cifre sau simboluri!")
+                    messagebox.showerror("Eroare", "Salariul nu poate contine cifre sau simboluri!")
                     return
                 elif digits and len(str(CNP_text.get()))==13:
                     digits==True
@@ -71,7 +71,7 @@ def add_entry():
                     clear_text()
                     break
                 elif len(str(CNP_text.get()))!=13:
-                    messagebox.showinfo("Eroare", "CNP-ul nu are 13 caractere!")
+                    messagebox.showerror("Eroare", "CNP-ul nu are 13 caractere!")
                     return
 
 def delete_entry():
@@ -110,7 +110,7 @@ def update_angajat():
                 elif digits1 or symbol1:
                     digits1==True 
                     symbol1==True
-                    messagebox.showinfo("Eroare", "namele nu poate contine cifre sau simboluri!")
+                    messagebox.showinfo("Eroare", "Numele nu poate contine cifre sau simboluri!")
                     return
                 
                 elif letters2 or symbol2:
